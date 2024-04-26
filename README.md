@@ -1,8 +1,7 @@
 # Organo 
 (under construction)
 
-## Developed with HTML, CSS, JavaScript, and React, Organo is a single-page application designed to simplify company organization and employee management.
-
+## A single-page application developed with HTML, CSS, JavaScript, and React
 Main features:
 - A simple form enables easy registration of employees, submitting their information directly to the company's system;
 - Upon submission, an employee card is dynamically created, facilitating integration into teams;
