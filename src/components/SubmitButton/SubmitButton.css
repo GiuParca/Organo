@@ -1,0 +1,17 @@
+.SubmitButton {
+    margin-top: 20px;
+    background-color: #127957;
+    color: #cdfaed;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.SubmitButton:hover {
+    color: #cdfaed !important;
+    border-radius: 20px;
+    border-color: #127957 !important;
+    transition: all 0.3s ease 0s;
+}

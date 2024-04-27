@@ -1,0 +1,17 @@
+import './Dropdown.css'
+
+const Dropdown = (props) => {
+    return (
+        <div className='dropdown'>
+            <label>{props.label}</label>
+            <select required={props.mandatory}>
+                {props.itens.map(item => {
+                    return <option key={item}>{item}</option>
+                })}
+            </select>
+        </div>
+    )
+
+}
+
+export default Dropdown
