@@ -17,10 +17,11 @@ const Form = () => {
     const [name, setName] = useState('')
     const [position, setPosition] = useState('')
     const [image, setImage] = useState('')
+    const [team, setTeam] = useState('')
 
     const onSubmit = (event) =>{
-        event.preventDefault();
-        console.log('Your form has been submitted =>', name, position, image);
+        event.preventDefault()
+        console.log('Your form has been submitted =>', name, position, image)
     }
 
     return (
@@ -47,7 +48,13 @@ const Form = () => {
                 value={image}
                 whenChanged={value => setImage(value)}
                 />
-                <Dropdown mandatory={true} label="Team" itens={teams}/>
+                <Dropdown 
+                mandatory={true} 
+                label="Team" 
+                itens={teams}
+                value={team}
+                whenChanged={value => setTeam(value)}
+                />
                 <SubmitButton text="Create Card">
                     Create Card
                 </SubmitButton>
