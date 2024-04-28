@@ -4,15 +4,7 @@ import Dropdown from '../Dropdown'
 import SubmitButton from '../SubmitButton'
 import { useState } from 'react'
 
-const Form = () => {
-
-    const teams = [
-        'Development',
-        'Data Science',
-        'Innovation and Management',
-        'Communication',
-        'Finance'
-    ]
+const Form = (props) => {
 
     const [name, setName] = useState('')
     const [position, setPosition] = useState('')
@@ -21,7 +13,16 @@ const Form = () => {
 
     const onSubmit = (event) =>{
         event.preventDefault()
-        console.log('Your form has been submitted =>', name, position, image)
+        props.addedTeamMember({
+            name,
+            position,
+            image,
+            team
+        })
+        setName('')
+        setPosition('')
+        setImage('')
+        setTeam('')
     }
 
     return (
@@ -51,7 +52,7 @@ const Form = () => {
                 <Dropdown 
                 mandatory={true} 
                 label="Team" 
-                itens={teams}
+                itens={props.teams}
                 value={team}
                 whenChanged={value => setTeam(value)}
                 />
