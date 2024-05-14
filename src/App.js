@@ -7,9 +7,6 @@ function App() {
 
   const teams = [
     {
-      name: ''
-    },
-    {
       name: 'Development',
       primaryColor: '#569a83',
       secondaryColor: '#D9F7E9'
@@ -38,7 +35,6 @@ function App() {
 
   const [collaborators, setCollaborators] = useState([])
   const addedTeamMember = (teamMember) =>{
-    console.log(collaborators)
     setCollaborators([...collaborators, teamMember])
   }
 

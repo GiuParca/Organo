@@ -44,6 +44,7 @@ const Form = (props) => {
                 whenChanged={value => setPosition(value)}
                 />
                 <TextField 
+                mandatory={true} 
                 label="Image" 
                 placeholder="Enter the image url" 
                 value={image}

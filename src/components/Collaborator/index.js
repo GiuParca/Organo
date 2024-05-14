@@ -1,9 +1,9 @@
 import './Collaborator.css'
 
-const Collaborator = ({image, name, position}) =>{
+const Collaborator = ({image, name, position, cardColor}) =>{
     return(
         <div className='collaborator'>  
-            <div className='header'>
+            <div className='header' style={{backgroundColor: cardColor}}>
                 <img src={image} alt={name}/>
             </div>
             <div className='footer'>
