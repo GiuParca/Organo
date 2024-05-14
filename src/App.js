@@ -2,27 +2,33 @@ import { useState } from 'react';
 import Banner from './components/Banner';
 import Form from './components/Form';
 import Team from './components/Team';
+import { v4 as uuidv4 } from 'uuid';
 
 function App() {
 
   const [teams, setTeams] = useState ([
     {
+      id: uuidv4(),
       name: 'Development',
       color: '#569a83'
     },
     {
+      id: uuidv4(),
       name: 'Data Science',
       color: '#082b3d'
     },
     {
+      id: uuidv4(),
       name: 'Innovation and Management',
       color: '#FFEEDF'
     },
     {
+      id: uuidv4(),
       name: 'Communication',
       color: '#FFBA05'
     },
     {
+      id: uuidv4(),
       name: 'Finance',
       color: '#E06B69'
     }
@@ -30,12 +36,14 @@ function App() {
 
   const initial = [
     {
+      id: uuidv4(),
       name: 'Giulia Parca',
       position: 'Junior Full-Stack Developer',
       image: 'https://github.com/GiuParca.png',
       team: teams[0].name
     },
     {
+      id: uuidv4(),
       name: 'Vera Furtado',
       position: 'Senior Web Designer',
       image: './images/team-5.png',
@@ -43,6 +51,7 @@ function App() {
 
     },
     {
+      id: uuidv4(),
       name: 'João Abreu',
       position: 'Software Developer',
       image: './images/team-3.jpg',
@@ -50,12 +59,14 @@ function App() {
 
     },
     {
+      id: uuidv4(),
       name: 'Henrique Castro',
       position: 'Software Developer',
       image: './images/team-4.jpg',
       team: teams[0].name
     },
     {
+      id: uuidv4(),
       name: 'Ana Medeiros',
       position: 'Machine Learning Engineer',
       image: './images/team-1.jpg',
@@ -63,6 +74,7 @@ function App() {
 
     },
     {
+      id: uuidv4(),
       name: 'Sophie Turner',
       position: 'Data Architect',
       image: './images/team-2.jpg',
@@ -70,6 +82,7 @@ function App() {
 
     },
     {
+      id: uuidv4(),
       name: 'Barbara Souza',
       position: 'Business Intelligence Specialist',
       image: './images/team-7.jpg',
@@ -77,6 +90,7 @@ function App() {
 
     },
     {
+      id: uuidv4(),
       name: 'Flavia Dutra',
       position: 'Social Media Manager',
       image: './images/team-9.jpg',
@@ -84,6 +98,7 @@ function App() {
 
     },
     {
+      id: uuidv4(),
       name: 'Carlos Sá',
       position: 'Chief Marketing Officer',
       image: './images/team-8.jpg',
@@ -99,9 +114,9 @@ function App() {
 
   }
 
-  function changeTeamColor(color, name){
+  function changeTeamColor(color, id){
     setTeams(teams.map(team =>{
-      if(team.name === name){
+      if(team.id === id){
         team.color = color;
       }
       return team;
