@@ -1,4 +1,4 @@
-.SubmitButton {
+.button {
     margin-top: 20px;
     background-color: #127957;
     color: #cdfaed;
@@ -9,7 +9,7 @@
     cursor: pointer;
 }
 
-.SubmitButton:hover {
+.button:hover {
     color: #cdfaed !important;
     border-radius: 20px;
     border-color: #127957 !important;

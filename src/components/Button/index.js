@@ -1,6 +1,6 @@
-import './SubmitButton.css'
+import './button.css'
 
-const SubmitButton = (props) =>{
+const Button = (props) =>{
     return (<button className='SubmitButton' type="submit">
         {props.children}
     </button>
@@ -8,4 +8,4 @@ const SubmitButton = (props) =>{
     )
 }
 
-export default SubmitButton
+export default Button

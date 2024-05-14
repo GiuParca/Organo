@@ -1,4 +1,4 @@
-import './Collaborator.css'
+import './collaborator.css'
 
 const Collaborator = ({image, name, position, cardColor}) =>{
     return(

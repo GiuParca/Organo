@@ -1,7 +1,7 @@
-import './Form.css'
+import './form.css'
 import TextField from '../TextField' 
 import Dropdown from '../Dropdown'
-import SubmitButton from '../SubmitButton'
+import SubmitButton from '../Button'
 import { useState } from 'react'
 
 const Form = (props) => {

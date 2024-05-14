@@ -1,5 +1,5 @@
 import Collaborator from '../Collaborator'
-import './Team.css'
+import './team.css'
 
 const Team = (props) => {
     const css = { background: props.secondaryColor }
