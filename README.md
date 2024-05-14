@@ -1,5 +1,4 @@
-# Organo 
-(under construction)
+# Organo
 
 ## A single-page application developed with HTML, CSS, JavaScript, and React
 Main features:
