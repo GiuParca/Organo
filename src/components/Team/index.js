@@ -1,24 +1,19 @@
 import Collaborator from '../Collaborator'
 import './team.css'
 
-const Team = (props) => {
-    const css = { background: props.secondaryColor }
-    const styling = { borderColor: props.primaryColor }
-
-
+const Team = ({team, collaborators, onDelete}) => {
     return (
-        props.collaborators.length>0 && <section className='team' style={css}>
-            <h3 style={styling}>{props.name}</h3>
+        collaborators.length>0 && <section className='team' style={{backegroundImage:'url(./images/fundo.png)', backgroundColor: team.primaryColor}}>
+            <h3 style={{borderColor:team.backgroundColor}}>{team.name}</h3>
             <div className='collaborators'>
-                {props.collaborators.map(teamMember => (
-                    <Collaborator
-                        cardColor={props.primaryColor}
-                        key={teamMember.name}
-                        name={teamMember.name}
-                        position={teamMember.position}
-                        image={teamMember.image}
-                    />
-                ))}
+                {collaborators.map((teamMember, index) => {
+                    return  <Collaborator
+                    key={index}
+                    teamMember={teamMember}
+                    cardColor={team.backgroundColor}
+                    onDelete ={() => {}}
+                />;
+                })}
             </div>
         </section>
     )

@@ -33,13 +33,13 @@ function App() {
     }
   ]
 
-  const initial =[
+  const initial = [
     {
-    name: 'Giulia Parca',
-    position: 'Junior Full-Stack Developer',
-    image: 'https://github.com/GiuParca.png',
-    team: teams[0].name
-  },
+      name: 'Giulia Parca',
+      position: 'Junior Full-Stack Developer',
+      image: 'https://github.com/GiuParca.png',
+      team: teams[0].name
+    },
     {
       name: 'Vera Furtado',
       position: 'Senior Web Designer',
@@ -75,13 +75,6 @@ function App() {
 
     },
     {
-      name: 'Alex Martins',
-      position: 'Project Manager',
-      image: './images/team-6.jpg',
-      team: teams[2].name
-
-    },
-    {
       name: 'Barbara Souza',
       position: 'Business Intelligence Specialist',
       image: './images/team-7.jpg',
@@ -106,22 +99,25 @@ function App() {
   ]
 
   const [collaborators, setCollaborators] = useState(initial)
-  const addedTeamMember = (teamMember) =>{
-    setCollaborators([...collaborators, teamMember])
+
+  function deleteTeamMember() {
+
   }
 
   return (
-    <div className="App">
-      <Banner/>
-      <Form teams={teams.map(team => team.name)} addedTeamMember = {teamMember => addedTeamMember(teamMember)}/>
-
-      {teams.map(team=> <Team 
-      key={team.name} 
-      name={team.name} 
-      primaryColor={team.primaryColor} 
-      secondaryColor={team.secondaryColor}
-      collaborators={collaborators.filter(teamMember => teamMember.team === team.name )}
-      />)}
+    <div>
+      <Banner />
+      <Form teams={teams.map(team => team.name)} addedTeamMember={teamMember => setCollaborators([...collaborators, teamMember])} />
+      <section className='teams'>
+        {teams.map((team, index) =>
+          <Team
+            key={index}
+            team={team}
+            collaborators={collaborators.filter(teamMember => teamMember.team === team.name)}
+            onDelete={deleteTeamMember}
+          />
+        )}
+      </section>
     </div>
   );
 }
