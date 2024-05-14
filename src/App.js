@@ -5,33 +5,28 @@ import Team from './components/Team';
 
 function App() {
 
-  const teams = [
+  const [teams, setTeams] = useState ([
     {
       name: 'Development',
-      primaryColor: '#569a83',
-      secondaryColor: '#D9F7E9'
+      color: '#569a83'
     },
     {
       name: 'Data Science',
-      primaryColor: '#082b3d',
-      secondaryColor: '#ebf5fa'
+      color: '#082b3d'
     },
     {
       name: 'Innovation and Management',
-      primaryColor: '#FF8A29',
-      secondaryColor: '#FFEEDF'
+      color: '#FFEEDF'
     },
     {
       name: 'Communication',
-      primaryColor: '#FFBA05',
-      secondaryColor: '#FFF5D9'
+      color: '#FFBA05'
     },
     {
       name: 'Finance',
-      primaryColor: '#E06B69',
-      secondaryColor: '#FDE7E8'
+      color: '#E06B69'
     }
-  ]
+  ])
 
   const initial = [
     {
@@ -104,6 +99,15 @@ function App() {
 
   }
 
+  function changeTeamColor(color, name){
+    setTeams(teams.map(team =>{
+      if(team.name === name){
+        team.color = color;
+      }
+      return team;
+    }));
+  }
+
   return (
     <div>
       <Banner />
@@ -113,6 +117,7 @@ function App() {
           <Team
             key={index}
             team={team}
+            changeColor={changeTeamColor}
             collaborators={collaborators.filter(teamMember => teamMember.team === team.name)}
             onDelete={deleteTeamMember}
           />
