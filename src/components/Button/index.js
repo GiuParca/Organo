@@ -1,8 +1,8 @@
 import './button.css'
 
-const Button = (props) =>{
-    return (<button className='SubmitButton' type="submit">
-        {props.children}
+const Button = ({text}) =>{
+    return (<button className='button'>
+        {text}
     </button>
 
     )

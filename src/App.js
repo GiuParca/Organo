@@ -108,10 +108,10 @@ function App() {
 
   ]
 
-  const [collaborators, setCollaborators] = useState(initial)
+  const [collaborators, setCollaborators] = useState(initial);
 
-  function deleteTeamMember() {
-
+  function deleteTeamMember(id) {
+      setCollaborators(collaborators.filter(teamMember => teamMember.id !== id));
   }
 
   function changeTeamColor(color, id){
@@ -123,10 +123,18 @@ function App() {
     }));
   }
 
+  function registerTeam(name, color){
+    setTeams([...teams, {name, color, id: uuidv4()}])
+  }
+
   return (
     <div>
       <Banner />
-      <Form teams={teams.map(team => team.name)} addedTeamMember={teamMember => setCollaborators([...collaborators, teamMember])} />
+      <Form 
+      registerTeam = {registerTeam}
+      teams={teams.map(team => team.name)} 
+      addedTeamMember={teamMember => setCollaborators([...collaborators, teamMember])} 
+      />
       <section className='teams'>
         {teams.map((team, index) =>
           <Team

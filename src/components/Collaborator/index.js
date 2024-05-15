@@ -1,10 +1,14 @@
-import { MdDeleteForever } from "react-icons/md";
+import { AiFillCloseCircle } from 'react-icons/ai';
 import './collaborator.css'
 
 const Collaborator = ({teamMember, cardColor, onDelete}) =>{
     return(
         <div className='collaborator'>  
-            <MdDeleteForever size={25} className="delete" onClick={onDelete}/>
+            <AiFillCloseCircle
+            size={25} 
+            className="delete" 
+            onClick={() => onDelete(teamMember.id)}
+            />
             <div className='header' style={{backgroundColor: cardColor}}>
                 <img src={teamMember.image} alt={teamMember.name}/>
             </div>
