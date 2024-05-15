@@ -37,13 +37,6 @@ function App() {
   const initial = [
     {
       id: uuidv4(),
-      name: 'Giulia Parca',
-      position: 'Junior Full-Stack Developer',
-      image: 'https://github.com/GiuParca.png',
-      team: teams[0].name
-    },
-    {
-      id: uuidv4(),
       name: 'Vera Furtado',
       position: 'Senior Web Designer',
       image: './images/team-5.png',

@@ -1,6 +1,5 @@
-import { AiFillCloseCircle } from 'react-icons/ai';
 import './collaborator.css'
-
+import { AiFillCloseCircle } from 'react-icons/ai';
 const Collaborator = ({teamMember, cardColor, onDelete}) =>{
     return(
         <div className='collaborator'>  

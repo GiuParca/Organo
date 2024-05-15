@@ -1,8 +1,8 @@
-import './form.css'
+import { useState } from 'react'
 import TextField from '../TextField'
 import Dropdown from '../Dropdown'
 import Button from '../Button'
-import { useState } from 'react'
+import './form.css'
 
 const Form = ({addedTeamMember, teams, registerTeam}) => {
 
