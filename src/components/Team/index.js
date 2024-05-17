@@ -2,7 +2,7 @@ import Collaborator from '../Collaborator'
 import './team.css'
 import hexToRgba from 'hex-to-rgba';
 
-const Team = ({team, collaborators, onDelete, changeColor}) => {
+const Team = ({team, collaborators, onDelete, changeColor, whenFavorite}) => {
     return (
         collaborators.length>0 && <section className='team' style={{backgroundColor: hexToRgba(team.color, '0.6')}}>
             <input type='color' className='input-color' value={team.color} onChange={event => {changeColor(event.target.value, team.id);
@@ -16,8 +16,8 @@ const Team = ({team, collaborators, onDelete, changeColor}) => {
                     teamMember={teamMember}
                     cardColor={team.color}
                     onDelete ={onDelete}
-                />
-                )}
+                    whenFavorite={whenFavorite}
+                />)}
             </div>
         </section>
     )

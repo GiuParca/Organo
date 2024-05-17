@@ -24,7 +24,7 @@
 }
 
 .collaborator .footer h4{
-    color: #6278F7;
+    color: #127957;
     font-size: 18px;
     line-height: 22px;
     font-weight: bold;
@@ -42,4 +42,8 @@
     position: absolute;
     right: -10px;
     top: -10px;
+}
+
+.favorite{
+    margin-top: 20px;
 }

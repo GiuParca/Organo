@@ -37,6 +37,7 @@ function App() {
   const initial = [
     {
       id: uuidv4(),
+      favorite: false,
       name: 'Vera Furtado',
       position: 'Senior Web Designer',
       image: './images/team-5.png',
@@ -45,6 +46,7 @@ function App() {
     },
     {
       id: uuidv4(),
+      favorite: false,
       name: 'João Abreu',
       position: 'Software Developer',
       image: './images/team-3.jpg',
@@ -53,6 +55,7 @@ function App() {
     },
     {
       id: uuidv4(),
+      favorite: false,
       name: 'Henrique Castro',
       position: 'Software Developer',
       image: './images/team-4.jpg',
@@ -60,6 +63,7 @@ function App() {
     },
     {
       id: uuidv4(),
+      favorite: false,
       name: 'Ana Medeiros',
       position: 'Machine Learning Engineer',
       image: './images/team-1.jpg',
@@ -68,6 +72,7 @@ function App() {
     },
     {
       id: uuidv4(),
+      favorite: false,
       name: 'Sophie Turner',
       position: 'Data Architect',
       image: './images/team-2.jpg',
@@ -76,6 +81,7 @@ function App() {
     },
     {
       id: uuidv4(),
+      favorite: false,
       name: 'Barbara Souza',
       position: 'Business Intelligence Specialist',
       image: './images/team-7.jpg',
@@ -84,6 +90,7 @@ function App() {
     },
     {
       id: uuidv4(),
+      favorite: false,
       name: 'Flavia Dutra',
       position: 'Social Media Manager',
       image: './images/team-9.jpg',
@@ -92,6 +99,7 @@ function App() {
     },
     {
       id: uuidv4(),
+      favorite: false,
       name: 'Carlos Sá',
       position: 'Chief Marketing Officer',
       image: './images/team-8.jpg',
@@ -116,26 +124,33 @@ function App() {
     }));
   }
 
-  function registerTeam(name, color){
+  function registerTeam({name, color}){
     setTeams([...teams, {name, color, id: uuidv4()}])
+  }
+
+  function favoritism(id){
+      setCollaborators(collaborators.map(teamMember => {
+        if(teamMember.id === id) teamMember.favorite = !teamMember.favorite;
+        return teamMember
+      }))
   }
 
   return (
     <div>
       <Banner />
       <Form 
-      registerTeam = {registerTeam}
+      onRegisterTeam = {registerTeam}
       teams={teams.map(team => team.name)} 
-      addedTeamMember={teamMember => setCollaborators([...collaborators, teamMember])} 
-      />
+      addedTeamMember={teamMember => setCollaborators([...collaborators, teamMember])} />
       <section className='teams'>
         {teams.map((team, index) =>
           <Team
             key={index}
             team={team}
+            whenFavorite = {favoritism}
             changeColor={changeTeamColor}
             collaborators={collaborators.filter(teamMember => teamMember.team === team.name)}
-            onDelete={deleteTeamMember}
+            onDelete={deleteTeamMember} 
           />
         )}
       </section>

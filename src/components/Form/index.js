@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import TextField from '../TextField'
+import Field from '../Field'
 import Dropdown from '../Dropdown'
 import Button from '../Button'
 import './form.css'
@@ -27,21 +27,21 @@ const Form = ({addedTeamMember, teams, registerTeam}) => {
         <section className='form-container'>
             <form className="form" onSubmit={onSubmit}>
                 <h2>Fill in the details to create a employee card</h2>
-                <TextField
+                <Field
                     mandatory
                     label="Name"
                     placeholder="Enter your name"
                     value={name}
                     whenChanged={value => setName(value)}
                 />
-                <TextField
+                <Field
                     mandatory
                     label="Position"
                     placeholder="Enter your position"
                     value={position}
                     whenChanged={value => setPosition(value)}
                 />
-                <TextField
+                <Field
                     mandatory={false}
                     label="Image"
                     placeholder="Enter the image url"
@@ -62,15 +62,16 @@ const Form = ({addedTeamMember, teams, registerTeam}) => {
                 registerTeam({name: teamName, color: teamColor})
             }}>
                 <h2>Create a new team</h2>
-                <TextField
+                <Field
                     mandatory
                     label="Name"
                     placeholder="Enter team name"
                     value={teamName}
                     whenChanged={value => setTeamName(value)}
                 />
-                <TextField
+                <Field
                     mandatory
+                    type="color"
                     label="Color"
                     placeholder="Enter the color"
                     value={teamColor}
