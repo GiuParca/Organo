@@ -4,7 +4,7 @@ import Dropdown from '../Dropdown'
 import Button from '../Button'
 import './form.css'
 
-const Form = ({addedTeamMember, teams, registerTeam}) => {
+const Form = ({addedTeamMember, teams, onRegisterTeam}) => {
 
     const [name, setName] = useState('')
     const [position, setPosition] = useState('')
@@ -59,7 +59,7 @@ const Form = ({addedTeamMember, teams, registerTeam}) => {
             </form>
             <form className="form" onSubmit={(event) => {
                 event.preventDefault();
-                registerTeam({name: teamName, color: teamColor})
+                onRegisterTeam({name: teamName, color: teamColor})
             }}>
                 <h2>Create a new team</h2>
                 <Field
