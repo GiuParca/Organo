@@ -10,8 +10,6 @@
 }
 
 .button:hover {
-    color: #cdfaed !important;
-    border-radius: 20px;
-    border-color: #127957 !important;
+    background-color: #0b4935;
     transition: all 0.3s ease 0s;
 }
